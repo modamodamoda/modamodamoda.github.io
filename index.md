@@ -30,10 +30,11 @@ I have been working as a full time professional freelancer for 8 years. I starte
 
 ### Personal Projects/Portfolio
 Working in a business-to-business environment unfortunately my portfolio of professional work is very small. So instead, I can show you my personal projects! Don't worry, as an obsessive programmer they have been written to the same degree of quality. See below for github links.
-1) Blockchain, implemented in C (includes proof of work algorithm.)
-  * https://github.com/modamodamoda/educational_c_blockchain
-2) MemDB, a fully fledged high speed memory-based database for javascript with hash and binary index support.
-  * https://github.com/modamodamoda/memdb
-  * *(tests)* https://github.com/modamodamoda/memdb-tests
-3) SakuraRouter, a router for node.js with middleware support.
-  * https://github.com/modamodamoda/sakurarouter
+
+  1. Blockchain, implemented in C (includes proof of work algorithm.)
+    * https://github.com/modamodamoda/educational_c_blockchain
+  2. MemDB, a fully fledged high speed memory-based database for javascript with hash and binary index support.
+    * https://github.com/modamodamoda/memdb
+    * *(tests)* https://github.com/modamodamoda/memdb-tests
+  3. SakuraRouter, a router for node.js with middleware support.
+    * https://github.com/modamodamoda/sakurarouter
