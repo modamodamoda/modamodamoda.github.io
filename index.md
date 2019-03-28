@@ -5,7 +5,7 @@ My name is Jack Penny. I am a computer programmer with a systems background who 
 
 ### Programming skills
 I have a great command of the languages listed below, ordered by years of experience notated in the form of `personal/professional years`.
- - C/C++ (14/8 years)
+ - C/C++ (14/8 years on and off)
  - JavaScript (12/8 years)
  - Perl (7/7 years for the old school companies out there)
  - PHP (11/8 years...should I really mention this on my resume?)
