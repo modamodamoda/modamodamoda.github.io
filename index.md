@@ -18,9 +18,9 @@ I have been using a linux terminal in some form almost every day for the past 10
 
 ### Hobbies
  - Music
- -- Easily my biggest hobby by far. I have been producing electronic music since the age of 15, which is around 12 years now, and playing guitar for 7 years. Although it's probably not useful for job applications, I have studied harmonic theory intensely and also have good command of that. Who knows, maybe you do marketing too and need commercial music?
+   * Easily my biggest hobby by far. I have been producing electronic music since the age of 15, which is around 12 years now, and playing guitar for 7 years. Although it's probably not useful for job applications, I have studied harmonic theory intensely and also have good command of that. Who knows, maybe you do marketing too and need commercial music?
  - Linguistics
- -- I love to study languages. I speak English, Korean and Mandarin. I'm currently studying Japanese and looking to take my TOPIK 2 (Korean) and HSK 4 (Mandarin) proficiency tests so that I can include those in my resume as a professional skill. I used to speak Spanish but got lazy and stopped speaking it. If there are any Spaniards in your company, I would love to practice with them.
+   * I love to study languages. I speak English, Korean and Mandarin. I'm currently studying Japanese and looking to take my TOPIK 2 (Korean) and HSK 4 (Mandarin) proficiency tests so that I can include those in my resume as a professional skill. I used to speak Spanish but got lazy and stopped speaking it. If there are any Spaniards in your company, I would love to practice with them.
 
 ### School
 Possibly my biggest weakness in the eyes of many employers - I am not traditionally educated. I never entered university. I started learning programming at the age of 10, as I wanted to create my own computer game. At the age of 12 I found C++ and kept cracking on it until the age of 19 when I finally started working as a professional freelancer in web development.
