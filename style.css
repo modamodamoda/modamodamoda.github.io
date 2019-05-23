@@ -1,0 +1,125 @@
+/* some overall declarations */
+body {
+  font: 14px/24px 'Courier New', monospace;
+  color: #111;
+  background: #f0dea7;
+  border-top: #f7e5ad 15px solid;
+  max-width: 100%;
+  overflow-x: hidden; }
+
+a {
+  color: #bc2929;
+  text-decoration: underline; }
+
+footer {
+  background: #f7e5ad; }
+
+/* headers */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1040px; } }
+h1, h2, h3 {
+  font-family: "Montserrat", Futura, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase; }
+
+h1 {
+  color: #bc2929;
+  font-size: 2em;
+  margin: 2em 0;
+  position: relative; }
+
+h1:before, h1:after {
+  position: absolute;
+  top: 51%;
+  overflow: hidden;
+  width: 50%;
+  height: 1px;
+  content: '\a0';
+  background-color: #bc2929; }
+
+h1:after {
+  width: 100%;
+  margin-left: 2%; }
+
+h1:before {
+  margin-left: -52%;
+  text-align: right; }
+
+h2 {
+  font-size: 1.35em;
+  font-weight: bold; }
+
+h2:before {
+  margin-left: -7%;
+  text-align: right;
+  position: absolute;
+  top: 51%;
+  overflow: hidden;
+  width: 4%;
+  height: 2px;
+  content: '\a0';
+  background-color: #111; }
+
+h3 {
+  font-size: 1.35em;
+  color: #bc2929; }
+
+/* links */
+li a {
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+  color: #111;
+  font-family: "Montserrat", Futura, sans-serif; }
+
+nav li {
+  padding-top: 1.5rem; }
+
+nav li.active {
+  border-top: #dac37b 0.25rem solid;
+  padding-top: 1.25rem; }
+
+.mini-nav li a[aria-expanded=true] {
+  color: #bc2929;
+  position: relative; }
+
+.mini-nav li a[aria-expanded=true]:after {
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: transparent;
+  border-top-color: #bc2929;
+  border-width: 5px;
+  margin-left: -5px; }
+
+/* buttons */
+button {
+  background: #bc2929;
+  color: #f0dea7;
+  text-transform: uppercase;
+  font-family: "Montserrat", Futura, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 0.25em 1.5em;
+  border: none;
+  border-radius: 5px; }
+
+/* bootstrap style generic classes */
+.montserrat {
+  font-family: "Montserrat", Futura, sans-serif; }
+
+.red {
+  color: #bc2929; }
+
+.size-s {
+  font-size: 1em; }
+
+.copyleft {
+  display: inline-block;
+  transform: rotate(180deg); }
