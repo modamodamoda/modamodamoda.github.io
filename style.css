@@ -5,7 +5,10 @@ body {
   background: #f0dea7;
   border-top: #f7e5ad 15px solid;
   max-width: 100%;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; }
 
 a {
   color: #bc2929;
@@ -13,6 +16,9 @@ a {
 
 footer {
   background: #f7e5ad; }
+
+#app {
+  flex: 1; }
 
 /* headers */
 @media (min-width: 1200px) {
@@ -29,37 +35,37 @@ h1 {
   margin: 2em 0;
   position: relative; }
 
-h1:before, h1:after {
-  position: absolute;
-  top: 51%;
-  overflow: hidden;
-  width: 50%;
-  height: 1px;
-  content: '\a0';
-  background-color: #bc2929; }
+@media (min-width: 768px) {
+  h1:before, h1:after {
+    position: absolute;
+    top: 51%;
+    overflow: hidden;
+    width: 50%;
+    height: 1px;
+    content: '\a0';
+    background-color: #bc2929; }
 
-h1:after {
-  width: 100%;
-  margin-left: 2%; }
+  h1:after {
+    width: 100%;
+    margin-left: 2%; }
 
-h1:before {
-  margin-left: -52%;
-  text-align: right; }
+  h1:before {
+    margin-left: -52%;
+    text-align: right; }
 
+  h2:before {
+    margin-left: -7%;
+    text-align: right;
+    position: absolute;
+    top: 51%;
+    overflow: hidden;
+    width: 4%;
+    height: 2px;
+    content: '\a0';
+    background-color: #111; } }
 h2 {
   font-size: 1.35em;
   font-weight: bold; }
-
-h2:before {
-  margin-left: -7%;
-  text-align: right;
-  position: absolute;
-  top: 51%;
-  overflow: hidden;
-  width: 4%;
-  height: 2px;
-  content: '\a0';
-  background-color: #111; }
 
 h3 {
   font-size: 1.35em;
@@ -96,7 +102,8 @@ nav li.active {
   border-color: transparent;
   border-top-color: #bc2929;
   border-width: 5px;
-  margin-left: -5px; }
+  margin-left: -5px;
+  margin-top: 5px; }
 
 /* buttons */
 button {
@@ -116,6 +123,9 @@ button {
 
 .red {
   color: #bc2929; }
+
+.bg-grey {
+  background: #aaa; }
 
 .size-s {
   font-size: 1em; }
