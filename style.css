@@ -3,7 +3,7 @@ body {
   font: 14px/24px 'Courier New', monospace;
   color: #000;
   background: #f1e3b8;
-  border-top: #f6edd3 15px solid;
+  border-top: #f9ecc8 15px solid;
   max-width: 100%;
   overflow-x: hidden;
   display: flex;
@@ -15,7 +15,7 @@ a {
   text-decoration: underline; }
 
 footer {
-  background: #f6edd3; }
+  background: #f9ecc8; }
 
 #app {
   flex: 1; }
@@ -148,4 +148,5 @@ button {
 .post-header h1 {
   font-size: 3em;
   text-transform:none;
+  line-height: 1.5em;
 }
