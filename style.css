@@ -3,7 +3,7 @@ body {
   font: 14px/24px 'Courier New', monospace;
   color: #000;
   background: #f1e3b8;
-  border: #f9ecc8 15px solid;
+  border-top: #f9ecc8 15px solid;
   max-width: 100%;
   overflow-x: hidden;
   display: flex;
