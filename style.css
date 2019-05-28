@@ -133,3 +133,11 @@ button {
 .copyleft {
   display: inline-block;
   transform: rotate(180deg); }
+/* post stuff */
+.post-content p {
+  margin: 0.5em 0;
+  line-height: 1.5em;
+}
+.post-content h3 {
+  margin-top: 1em;
+}
