@@ -141,4 +141,7 @@ button {
 .post-content h3 {
   margin-top: 2em;
   margin-bottom: 1em;
+  color: #222;
+  font-size: 1.5em;
+  text-transform: none;
 }
