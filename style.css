@@ -105,9 +105,6 @@ nav li.active {
   margin-left: -5px;
   margin-top: 5px; }
 
-.mini-nav, .mini-blog {
-  margin-bottom: 2em;
-}
 /* buttons */
 button {
   background: #bc2929;
