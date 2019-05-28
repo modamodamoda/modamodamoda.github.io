@@ -135,9 +135,10 @@ button {
   transform: rotate(180deg); }
 /* post stuff */
 .post-content p {
-  margin: 0.5em 0;
-  line-height: 1.5em;
+  margin-bottom: 2em;
+  line-height: 1.6em;
 }
 .post-content h3 {
   margin-top: 1em;
+  margin-bottom: 2em;
 }
