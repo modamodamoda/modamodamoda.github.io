@@ -1,9 +1,9 @@
 /* some overall declarations */
 body {
   font: 14px/24px 'Courier New', monospace;
-  color: #111;
-  background: #f0dea7;
-  border-top: #f7e5ad 15px solid;
+  color: #000;
+  background: #f1e3b8;
+  border-top: #f6edd3 15px solid;
   max-width: 100%;
   overflow-x: hidden;
   display: flex;
@@ -15,7 +15,7 @@ a {
   text-decoration: underline; }
 
 footer {
-  background: #f7e5ad; }
+  background: #f6edd3; }
 
 #app {
   flex: 1; }
@@ -108,7 +108,7 @@ nav li.active {
 /* buttons */
 button {
   background: #bc2929;
-  color: #f0dea7;
+  color: #f1e3b8;
   text-transform: uppercase;
   font-family: "Montserrat", Futura, sans-serif;
   font-size: 1em;
