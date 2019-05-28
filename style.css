@@ -3,7 +3,7 @@ body {
   font: 14px/24px 'Courier New', monospace;
   color: #000;
   background: #f1e3b8;
-  border-top: #f9ecc8 15px solid;
+  border: #f9ecc8 15px solid;
   max-width: 100%;
   overflow-x: hidden;
   display: flex;
@@ -52,17 +52,7 @@ h1 {
   .home-header h1:before {
     margin-left: -52%;
     text-align: right; }
-
-  h2:before {
-    margin-left: -7%;
-    text-align: right;
-    position: absolute;
-    top: 51%;
-    overflow: hidden;
-    width: 4%;
-    height: 2px;
-    content: '\a0';
-    background-color: #111; } }
+ }
 h2 {
   font-size: 1.35em;
   font-weight: bold; }
