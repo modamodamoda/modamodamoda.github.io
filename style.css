@@ -36,7 +36,7 @@ h1 {
   position: relative; }
 
 @media (min-width: 768px) {
-  h1:before, h1:after {
+  .home-header h1:before, .home-header h1:after {
     position: absolute;
     top: 51%;
     overflow: hidden;
@@ -45,11 +45,11 @@ h1 {
     content: '\a0';
     background-color: #bc2929; }
 
-  h1:after {
+  .home-header h1:after {
     width: 100%;
     margin-left: 2%; }
 
-  h1:before {
+  .home-header h1:before {
     margin-left: -52%;
     text-align: right; }
 
@@ -144,4 +144,8 @@ button {
   color: #222;
   font-size: 1.5em;
   text-transform: none;
+}
+.post-header h1 {
+  font-size: 3em;
+  text-transform:none;
 }
