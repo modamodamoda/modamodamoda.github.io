@@ -2,34 +2,121 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href='https://jackpenny.com/css/bootstrap.min.css' type='text/css' rel='stylesheet' />
-        <link href='https://jackpenny.com/style.css?v=2' rel='stylesheet' />
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
         <title>Jack Penny - Blockchain implemented in C</title>
+        <style>
+            html {
+                height: 100%;
+            }
+            body {
+                font: 300 16px/28px "Merriweather", serif;
+                color:#111;
+                background:#f5f5f5;
+                align-items:center;
+                justify-content:center;
+                min-height: 100%;
+                padding:0;
+                margin:0;
+                flex-direction: column;
+                display: flex;
+            }
+            body > div {
+                width: 50%;
+                display: none;
+                margin:5%;
+            } 
+            body > div.selected {
+                display:inline;
+            }
+            a {
+                color: #000;
+            }
+            h1, h2 {
+                font-weight: 400;
+                font-size:2em;
+                margin-bottom:1em;
+                line-height: 1.5em;
+            }
+            h3 {
+                font-weight: 300;
+                font-size: 1.5em;
+                line-height: 1.5em;
+                margin-bottom:0.75em;
+            }
+            h4 {
+                font-size: 1em;
+                line-height: 1.5em;
+                font-weight: 300;
+            }
+            ul {
+                margin: 0;
+                padding:0;
+            }
+            li {
+                list-style: none;
+            }
+            li p {
+                color: #333;
+            }
+            input, textarea {
+                background: transparent;
+                border: none;
+                border-bottom: #222 1px solid;
+                color: #222;
+                margin-bottom:1em;
+                width: 100%;
+                font: 300 16px/26px "Merriweather", serif;
+                padding:0.5em;
+                resize: none;
+            }
+            input::placeholder, textarea::placeholder {
+                font-style: italic;
+                color: #ccc;
+            }
+            button {
+                background: #222;
+                padding: 0.5em 1em;
+                border: none;
+                font: 300 16px/26px "Merriweather", serif;
+                color: #eee;
+            }
+            .mt-1 {
+                margin-top:1.5em;
+            }
+            @media screen and (max-width: 1024px) {
+                body > div {
+                    width: 80%;
+                }
+                body {
+                    justify-content: flex-start;
+                }
+            }
+            @media screen and (prefers-color-scheme:dark) {
+                body {
+                    background: #111;
+                    color: #eee;
+                }
+                a {
+                    color: #fff;
+                }
+                li p {
+                    color: #ccc;
+                }
+                button {
+                    background: #eee;
+                    color: #222;
+                }
+                input, textarea {
+                    border-bottom-color: #fff;
+                    color: #fff;
+                }
+                input::placeholder, textarea::placeholder {
+                    color: #f0f0f0;
+                }
+            }
+        </style>
     </head>
     <body>
-        <div id='app' class='pb-5 container'>
-            <nav class='align-items-right'>
-                <ul class='list-inline mb-4 pb-4 text-right'>
-                    
-                        <li class='list-inline-item mx-2 '><a href='https://jackpenny.com/'>Home</a></li>
-                    
-                        <li class='list-inline-item mx-2 '><a href='https://jackpenny.com/design/'>Design</a></li>
-                    
-                        <li class='list-inline-item mx-2 '><a href='https://jackpenny.com/c/'>Systems</a></li>
-                    
-                        <li class='list-inline-item mx-2 '><a href='https://jackpenny.com/nodejs/'>NodeJS</a></li>
-                    
-                </ul>
-            </nav>
-            
-        <p>asdsa</p>    
-        </div>
-        <footer class='mt-5 py-5'>
-            <p class='text-center copyright'>Copyleft <span class='copyleft'>&copy;</span> Jack Penny</p>
-        </footer>
-        <!-- additional includes -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-        <script src="https://jackpenny.com/js/bootstrap.bundle.min.js" type='text/javascript'></script>
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+        <p>asdsa</p> 
     </body>
 </html>

@@ -3,7 +3,7 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
-        <title>Jack Penny - Home</title>
+        <title>Jack Penny - Work</title>
         <style>
             html {
                 height: 100%;
@@ -118,61 +118,42 @@
     </head>
     <body>
         
-<div id='home' class='selected'>
-    <h2>Hello</h2>
-    <p>I am an ecommerce, business intelligence and systems developer and designer hailing from the UK. Based in London, I create platforms for US and China-based businesses.</p>
-    <p>You can see my work <a href='#work'>here</a>, or contact me <a href='#contact'>here</a>.</p>
-    <h3 class='mt-1'>Writings</h3>
-    <ul>
+<section class='mini-portfolio' id='mini-nav'>
+    <div class='row'>
         
-            <li><h4>(<i>2019-05-01</i>) <a href='https://jackpenny.com/languages/suggestions-for-romanisation-of-hangul.html'>Ideas for improvements on the romanisation of Hangeul</a></h4></li>
         
-    </ul>
-</div>
-<div id='work'>
-    <h2>My Work</h2>
-    <ul>
+        <div class='col-12 col-md-6'>
+            <h3>Blockchain implemented in C</h3>
+            <span class='montserrat font-s red'>educational material</span>
+            <p class='mt-2'>Just for fun, I implemented a basic proof of work blockchain in C.</p>
+            <p class='text-right'><a href='https://github.com/modamodamoda/educational_c_blockchain'><button>Visit Site</button></a></p>
+        </div>
         
-            <li><h4><a href='https://github.com/modamodamoda/educational_c_blockchain'>Blockchain implemented in C</a></h4><p>Just for fun, I implemented a basic proof of work blockchain in C.</p></li>
+        <div class='col-12 col-md-4 mb-4 mb-lg-0'><img src='https://jackpenny.com/aaa.jpg' class='img-fluid' /></div>
+        <div class='col-12 col-md-6'>
+            <h3>Lloyd Penny Limited</h3>
+            <span class='montserrat font-s red'>digital strategy agency</span>
+            <p class='mt-2'>Web design for my digital strategy agency based in Hong Kong.</p>
+            
+        </div>
         
-            <li><h4><a href=''>Lloyd Penny Limited</a></h4><p>Web design for my digital strategy agency based in Hong Kong.</p></li>
         
-            <li><h4><a href='https://github.com/modamodamoda/memdb'>MemDB</a></h4><p>An in-memory database written in pure JS, it supports hash and binary indices.</p></li>
+        <div class='col-12 col-md-6'>
+            <h3>MemDB</h3>
+            <span class='montserrat font-s red'>in-memory database in pure js</span>
+            <p class='mt-2'>An in-memory database written in pure JS, it supports hash and binary indices.</p>
+            <p class='text-right'><a href='https://github.com/modamodamoda/memdb'><button>Visit Site</button></a></p>
+        </div>
         
-            <li><h4><a href='https://github.com/modamodamoda/StatiCTON'>StatiCTON</a></h4><p>A basic static site generator with support for templating and iteration. It's amazing what you can do in under 250 lines of code.</p></li>
         
-    </ul>
-    <p><a href='#home'>&laquo; Back home</a></p>
-</div>
-<div id='contact'>
-    <h2>Contact</h2>
-    <form action='http://46.101.3.14/sendmail?website=jp' method='POST'>
-        <input type='text' required='true' name='email' placeholder='Enter e-mail' />
-        <input type='text' required='true' name='name' placeholder='Enter name' />
-        <textarea name='summary' required='true' placeholder='Enter request'></textarea>
-        <button type='submit'>Submit</button>
-        <input type='hidden' name='l' value='https://jackpenny.com/' />
-    </form>
-    <p><a href='#home'>&laquo; Back home</a></p>
-</div>
-<script>
-    function update(def) { 
-        var results = document.querySelectorAll("body > div");
-        for(var i = 0; i < results.length; i++) {
-            if('#' + results[i].getAttribute('id') == (window.location.hash || def || '#home'))
-                results[i].classList.add('selected');
-            else
-                results[i].classList.remove('selected');
-        }
-     }
-    window.onhashchange = update;
-    window.onload = function() {
-        if(document.location.indexOf('?mail_error=1') !== -1) // a little hacky but this page should never receive any other get variable
-            {
-                alert('There was an error sending your mail. Please ensure all fields are filled in correctly.');
-                update('#contact');
-            } else update();
-    }
-</script> 
+        <div class='col-12 col-md-6'>
+            <h3>StatiCTON</h3>
+            <span class='montserrat font-s red'>static site generator</span>
+            <p class='mt-2'>A basic static site generator with support for templating and iteration. It's amazing what you can do in under 250 lines of code.</p>
+            <p class='text-right'><a href='https://github.com/modamodamoda/StatiCTON'><button>Visit Site</button></a></p>
+        </div>
+        
+    </div>
+</section> 
     </body>
 </html>
