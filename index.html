@@ -1,53 +1,6 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
-        <link href="https://jackpenny.com/style.css" rel="stylesheet">
-        <title>Jack Penny - Home</title>
-    </head>
-    <body>
-        
-<div id='home' class='selected'>
-    <h2>Hello</h2>
-    <p>I am an ecommerce, business intelligence and systems developer and designer hailing from the UK. Based in London, I create platforms for US and China-based businesses.</p>
-    <p>You can see my work <a href='#work'>here</a>, or contact me <a href='#contact'>here</a>.</p>
-    <h3 class='mt-1'>Writings</h3>
-    <ul>
-        
-            <li><h4>(<i>2019-05-01</i>) <a href='https://jackpenny.com/languages/suggestions-for-romanisation-of-hangul.html'>Ideas for improvements on the romanisation of Hangeul</a></h4></li>
-        
-    </ul>
-</div>
-<div id='work'>
-    <h2>My Work</h2>
-    <ul>
-        
-            <li><h4><a href='https://github.com/modamodamoda/educational_c_blockchain'>Blockchain implemented in C</a></h4><p>Just for fun, I implemented a basic proof of work blockchain in C.</p></li>
-        
-            <li><h4><a href=''>Lloyd Penny Limited</a></h4><p>Web design for my digital strategy agency based in Hong Kong.</p></li>
-        
-            <li><h4><a href='https://github.com/modamodamoda/memdb'>MemDB</a></h4><p>An in-memory database written in pure JS, it supports hash and binary indices.</p></li>
-        
-            <li><h4><a href='https://github.com/modamodamoda/StatiCTON'>StatiCTON</a></h4><p>A basic static site generator with support for templating and iteration. It's amazing what you can do in under 250 lines of code.</p></li>
-        
-    </ul>
-    <p><a href='#home'>&laquo; Back home</a></p>
-</div>
-<div id='contact'>
-    <h2>Contact</h2>
-    <form action='http://46.101.3.14/sendmail?website=jp' method='POST'>
-        <input type='text' required='true' name='email' placeholder='Enter e-mail' />
-        <input type='text' required='true' name='name' placeholder='Enter name' />
-        <textarea name='summary' required='true' placeholder='Enter request'></textarea>
-        <button type='submit'>Submit</button>
-        <input type='hidden' name='l' value='https://jackpenny.com/' />
-    </form>
-    <p><a href='#home'>&laquo; Back home</a></p>
-</div>
-<script>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=Rubik:wght@400;500&display=swap" rel="stylesheet" /><link href="file:///home/apigeonabroad/modamodamoda.github.io/style.css" rel="stylesheet" /><title>Jack Penny - Home</title></head><body><div class="letterbox"><div id="home" class="selected"><h2>Hello.</h2><p>I am an ecommerce, business intelligence and systems developer and designer hailing from the UK. Based in London, I create platforms for US and China-based businesses.</p><p>You can see my work <a href="#work">here</a>, CV/resume <a href="cv.pdf">here</a>, or contact me <a href="#contact">here</a>.</p><h3 class="mt-1">Writings</h3><ul><li><h4>(<i>2019-05-01</i>) <a href="file:///home/apigeonabroad/modamodamoda.github.io/languages/suggestions-for-romanisation-of-hangul.html">Ideas for improvements on the romanisation of Hangeul</a></h4></li></ul></div><div id="work"><h2>My Work</h2><ul><li><h4><a href="https://github.com/modamodamoda/educational_c_blockchain">Blockchain implemented in C</a></h4><p>Just for fun, I implemented a basic proof of work blockchain in C.</p></li><li><h4><a href="undefined">Lloyd Penny Limited</a></h4><p>Web design for my digital strategy agency based in Hong Kong.</p></li><li><h4><a href="https://github.com/modamodamoda/memdb">MemDB</a></h4><p>An in-memory database written in pure JS, it supports hash and binary indices.</p></li><li><h4><a href="https://github.com/modamodamoda/StatiCTON">StatiCTON</a></h4><p>A basic static site generator with support for templating and iteration. It's amazing what you can do in under 250 lines of code.</p></li></ul><p><a href="#home">&laquo; Back home</a></p></div><div id="contact"><h2>Contact</h2><form action="http://46.101.3.14/sendmail?website=jp" method="POST"><input type="text" required="true" name="email" placeholder="Enter e-mail" /><input type="text" required="true" name="name" placeholder="Enter name" /><textarea name="summary" required="true" placeholder="Enter request"></textarea><button type="submit">Submit</button><input type="hidden" name="l" value="https://jackpenny.com/" /></form><p><a href="#home">&laquo; Back home</a></p></div></div><script>
     function update(def) { 
-        var results = document.querySelectorAll("body > div");
+        var results = document.querySelectorAll(".letterbox > div");
         for(var i = 0; i < results.length; i++) {
             if('#' + results[i].getAttribute('id') == (window.location.hash || def || '#home'))
                 results[i].classList.add('selected');
@@ -63,6 +16,4 @@
                 update('#contact');
             } else update();
     }
-</script> 
-    </body>
-</html>
+</script></body></html>
