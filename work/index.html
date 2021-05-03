@@ -19,8 +19,7 @@
 				if(window.location.toString().indexOf('?mail_error=1') !== -1) // a little hacky but this page should never receive any other get variable
 					{
 						alert('There was an error sending your mail. Please ensure all fields are filled in correctly.');
-						update('#contact');
-					} else update();
+					}
 
 				setTimeout(function() {
 					var ip = ['178','62','116','228'];
