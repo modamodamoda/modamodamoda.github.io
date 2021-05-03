@@ -1,1 +1,31 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=Rubik:wght@400;500&display=swap" rel="stylesheet" /><link href="https://jackpenny.com/style.css" rel="stylesheet" /><title>Jack Penny - Work</title></head><body><section class="mini-portfolio" id="mini-nav"><div class="row"><div class="col-12 col-md-6"><h3>Blockchain implemented in C</h3><span class="montserrat font-s red">educational material</span><p class="mt-2">Just for fun, I implemented a basic proof of work blockchain in C.</p><p class="text-right"><a href="https://github.com/modamodamoda/educational_c_blockchain"><button>Visit Site</button></a></p></div><div class="col-12 col-md-4 mb-4 mb-lg-0"><img src="https://jackpenny.com/aaa.jpg" class="img-fluid" /></div><div class="col-12 col-md-6"><h3>Lloyd Penny Limited</h3><span class="montserrat font-s red">digital strategy agency</span><p class="mt-2">Web design for my digital strategy agency based in Hong Kong.</p></div><div class="col-12 col-md-6"><h3>MemDB</h3><span class="montserrat font-s red">in-memory database in pure js</span><p class="mt-2">An in-memory database written in pure JS, it supports hash and binary indices.</p><p class="text-right"><a href="https://github.com/modamodamoda/memdb"><button>Visit Site</button></a></p></div><div class="col-12 col-md-6"><h3>StatiCTON</h3><span class="montserrat font-s red">static site generator</span><p class="mt-2">A basic static site generator with support for templating and iteration. It's amazing what you can do in under 250 lines of code.</p><p class="text-right"><a href="https://github.com/modamodamoda/StatiCTON"><button>Visit Site</button></a></p></div></div></section></body></html>
+<!DOCTYPE html><html lang="en"><head><link rel="preconnect" href="https://fonts.gstatic.com" /><link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,500;1,800&family=Source+Code+Pro&display=swap" rel="stylesheet" /><script>
+            window.onscroll = window.onload = function() {
+                var yOffset = window.pageYOffset;
+                //document.getElementById('para').style.marginTop = Math.round(yOffset / 1.5) + 'px';
+            }
+            function toggleMenu() {
+                var menu = document.getElementById('nav');
+                var bars = document.getElementById('bars');
+
+                if(menu.classList.contains('show')) {
+                    menu.classList.remove('show');
+                    bars.classList.remove('active');
+                } else {
+                    menu.classList.add('show');
+                    bars.classList.add('active');
+                }
+            }
+    		window.onload = function() {
+				if(window.location.toString().indexOf('?mail_error=1') !== -1) // a little hacky but this page should never receive any other get variable
+					{
+						alert('There was an error sending your mail. Please ensure all fields are filled in correctly.');
+						update('#contact');
+					} else update();
+
+				setTimeout(function() {
+					var ip = ['178','62','116','228'];
+					var sel = document.querySelector("#ms");
+					sel.setAttribute("action", 'http://' + ip.join('.') + '/sendm' + 'ail?website=jp');
+				}, 5000);
+			}
+        </script><link href="https://jackpenny.com/style.css?v=8" rel="stylesheet" /></head><body><div class="body"><header class="container"><div class="menu flex"><div class="logo"><a class="nt" href="https://jackpenny.com/"><span class="l">{</span> JP <span class="l">}</span></a></div><div id="bars" onclick="toggleMenu();"><div class="nav-button"></div><nav id="nav"><ul><li><a href="https://jackpenny.com/programming/">Programming</a></li><li><a href="https://jackpenny.com/language/">Language</a></li></ul></nav></div></div></header><div class="container content"><div class="flex-wrap flex"><div class="mt br"><h3>Work</h3><div class="blog-border"></div><ul><li class="post"><h2><a href="https://jackpenny.com/portfolio/blockchain.html">Blockchain implemented in C</a></h2><div class="flex"><p class="meta">1 Jan</p><div class="mono"><p>Just for fun, I implemented a basic proof of work blockchain in C.</p><p class="small-cat">(Work)</p></div></div></li><li class="post"><h2><a href="https://jackpenny.com/portfolio/lloydpenny.html">Lloyd Penny Limited</a></h2><div class="flex"><p class="meta">1 Jan</p><div class="mono"><p>Web design for my digital strategy agency based in Hong Kong.</p><p class="small-cat">(Work)</p></div></div></li><li class="post"><h2><a href="https://jackpenny.com/portfolio/memdb.html">MemDB</a></h2><div class="flex"><p class="meta">1 Jan</p><div class="mono"><p>An in-memory database written in pure JS, it supports hash and binary indices.</p><p class="small-cat">(Work)</p></div></div></li><li class="post"><h2><a href="https://jackpenny.com/portfolio/staticton.html">StatiCTON</a></h2><div class="flex"><p class="meta">1 Jan</p><div class="mono"><p>A basic static site generator with support for templating and iteration. It's amazing what you can do in under 250 lines of code.</p><p class="small-cat">(Work)</p></div></div></li></ul></div></div></div></div><footer class="container"><div id="contact"><h2>Contact</h2><form id="ms"><p><input type="text" placeholder="Your E-Mail" /></p><p><textarea placeholder="Your Message"></textarea></p><p><button type="submit" class="submit">Submit Message</button></p></form></div></footer></body></html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html><html lang="en"><head><link rel="preconnect" href="https://fonts.gstatic.com" /><link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,500;1,800&family=Source+Code+Pro&display=swap" rel="stylesheet" /><script>
+            window.onscroll = window.onload = function() {
+                var yOffset = window.pageYOffset;
+                //document.getElementById('para').style.marginTop = Math.round(yOffset / 1.5) + 'px';
+            }
+            function toggleMenu() {
+                var menu = document.getElementById('nav');
+                var bars = document.getElementById('bars');
+
+                if(menu.classList.contains('show')) {
+                    menu.classList.remove('show');
+                    bars.classList.remove('active');
+                } else {
+                    menu.classList.add('show');
+                    bars.classList.add('active');
+                }
+            }
+    		window.onload = function() {
+				if(window.location.toString().indexOf('?mail_error=1') !== -1) // a little hacky but this page should never receive any other get variable
+					{
+						alert('There was an error sending your mail. Please ensure all fields are filled in correctly.');
+						update('#contact');
+					} else update();
+
+				setTimeout(function() {
+					var ip = ['178','62','116','228'];
+					var sel = document.querySelector("#ms");
+					sel.setAttribute("action", 'http://' + ip.join('.') + '/sendm' + 'ail?website=jp');
+				}, 5000);
+			}
+        </script><link href="https://jackpenny.com/style.css?v=8" rel="stylesheet" /></head><body><div class="body"><header class="container"><div class="menu flex"><div class="logo"><a class="nt" href="https://jackpenny.com/"><span class="l">{</span> JP <span class="l">}</span></a></div><div id="bars" onclick="toggleMenu();"><div class="nav-button"></div><nav id="nav"><ul><li><a href="https://jackpenny.com/programming/">Programming</a></li><li><a href="https://jackpenny.com/language/">Language</a></li></ul></nav></div></div></header><script>
+    function ajax() {
+		if (window.XMLHttpRequest) {
+			return new XMLHttpRequest();
+		} else if (window.ActiveXObject) {
+			return new ActiveXObject("Microsoft.XMLHTTP");
+		} else {
+			alert("Browser does not support XMLHTTP.");
+			return false;
+		}
+    }
+    var to;
+    function _search(query) {
+        to && clearTimeout(to);
+        to = setTimeout(function() { search(query) }, 700);
+    }
+    function search(query) {
+
+        var req = ajax();
+        if(query.trim() == '') return;
+
+        var el = document.getElementById('results'); 
+        el.innerHTML = '<p>Loading...</p>';
+        var url = 'https://jackmush.com/search?q=' + encodeURIComponent(query);
+        req.open("GET", url, true);
+        req.send(null);
+        req.onreadystatechange = function() {
+            if(req.readyState == 4 && req.status == 200) {
+                var res = JSON.parse(req.responseText);
+                el.innerHTML = '';
+                var j = res.results;
+                if(j.length == 0) {
+                    el.innerHTML = '<p>No results.</p>';
+                    return;
+                }
+                for(var i = 0; i < j.length; i++) {
+                    var post = document.createElement('div');
+                    post.classList.add('post');
+                    var meta = document.createElement('p');
+                    meta.classList.add('meta');
+                    meta.innerText = j[i][1].date + ' / ' + j[i][1].category;
+                    post.appendChild(meta);
+                    var title = document.createElement('h2');
+                    var link = document.createElement('a');
+                    link.setAttribute('href', 'https://jackpenny.com' + j[i][1].href);
+                    link.innerText = j[i][1].title;
+                    title.appendChild(link);
+                    post.appendChild(title);
+                    var p = document.createElement('p');
+                    p.innerHTML = j[i][1].summary;
+                    post.appendChild(p);
+                    el.appendChild(post); 
+                }
+            }
+        } 
+    }
+</script><div class="container"><input type="text" placeholder="Enter search here..." class="searchbar" onkeyup="_search(this.value)" /></div><div class="content container" id="results"></div></div><footer class="container"><div id="contact"><h2>Contact</h2><form id="ms"><p><input type="text" placeholder="Your E-Mail" /></p><p><textarea placeholder="Your Message"></textarea></p><p><button type="submit" class="submit">Submit Message</button></p></form></div></footer></body></html>
