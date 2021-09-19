@@ -38,21 +38,28 @@
         idf: Float
     }
 }
-These are also stored in a hashmap. I decided on a hashmap for the document_ids so that when we want to update the index, we don't need to search for the document_id again. Perhaps a more prefered method for if you have way many documents is to store these in a binary-sorted array, so that they can be updated in O(log N) time, but for simplicity let's keep it a hashmap for now.
-
-### The insertion algorithm: calculating TF and storing them
-
-This is the algorithm run every time a document is inserted. First, we tokenise the string. That removes a lot of the symbols and separate out the words, and then make them lowercase. If you are using Javascript, you might want to look at the newish "String.prototype.normalize" function to get rid of accents, and then simply remove all non a-zA-Z0-9\' characters with regex.
-
-After this, we iterate through all of the terms, and give them a weight. The weight is awarded with the log-scaled TF formula: `(log(t) + 1) / s`, where `t` is the number of times the term appears, and `s` is the sum of all `log(t) + 1` for all terms in the document. 
-
-The terms and document data are then stored in the data structure.
-
-Pseudo-code for this may look like this:
-</code></pre><p>insert(document) { words = tokenise(all<em>text</em>in(document)); terms = {} foreach(words as word) { terms[word] = (terms[word] || 0) + 1; // add one count to this word } logTotal = 0; // a running total of our log(count of words) foreach(terms as word -&gt; count) { logTotal += log(count) + 1; } foreach(terms as word -&gt; count) { // and again, once we got our total weighting[word] = (log(count) + 1) / logTotal // Add this to our global objects as defined above terms[word][document.id] = weighting[word]; } }</p><pre><code>### Calculating the IDF
-
-After your document updates are done, you'll want to calculate the IDF for each term that was updated. Another way is simply calculating the IDF at run-time every time you run a search, but this can result in a small performance sacrifice. 
-</code></pre><p>update(term) { // Referencing the global objects defined above. ~.count is simply the number of keys in a hashmap, e.g. Javascript's Object.keys().length terms[term].idf = log( ( ( documents.count - terms[term].documents.count) / terms[term].documents.count ) + 1 ) } ````</p><h3 id="thefindalgorithm">The find algorithm</h3><p>Next, is the algorithm to find and rank terms. We simply tokenise the search input, and run through each term. After that, we calculate the <em>inverse document frequency</em>. This is the number of documents in the collection, subtracted by the number of documents containing the term, divided by the number of documents containing the term. Whew. I add a 1.01 to this number. Why? The +1 is to prevent a -Infinity for log 0, and the 0.01 extra is just to give a <em>little</em> weighting to terms that appear in all documents. Generally a +1 is simply added.</p><p>After that, I also log if there is a partial match for more than 1 of the search terms. Since we stored which terms came after each term in the document, we can easily check if the next word in our search term matches against any of those. If so, then we add to our partial match coefficient. Finally, when all of the weights are added together, we multiply the weights added together with a simply <code>1 + log(p + 1)</code> where p is our partial coefficient, or rather how many terms we found that match the same order as the search query.</p><p>Pseudo-code for this may look like this:</p><pre><code>find(text) {
+</code></pre><p>These are also stored in a hashmap. I decided on a hashmap for the document<em>ids so that when we want to update the index, we don't need to search for the document</em>id again. Perhaps a more prefered method for if you have way many documents is to store these in a binary-sorted array, so that they can be updated in O(log N) time, but for simplicity let's keep it a hashmap for now.</p><h3 id="theinsertionalgorithmcalculatingtfandstoringthem">The insertion algorithm: calculating TF and storing them</h3><p>This is the algorithm run every time a document is inserted. First, we tokenise the string. That removes a lot of the symbols and separate out the words, and then make them lowercase. If you are using Javascript, you might want to look at the newish "String.prototype.normalize" function to get rid of accents, and then simply remove all non a-zA-Z0-9\' characters with regex.</p><p>After this, we iterate through all of the terms, and give them a weight. The weight is awarded with the log-scaled TF formula: <code>(log(t) + 1) / s</code>, where <code>t</code> is the number of times the term appears, and <code>s</code> is the sum of all <code>log(t) + 1</code> for all terms in the document. </p><p>The terms and document data are then stored in the data structure.</p><p>Pseudo-code for this may look like this:</p><pre><code>insert(document) {
+    words = tokenise(all_text_in(document));
+    terms = {}
+    foreach(words as word) {
+        terms[word] = (terms[word] || 0) + 1; // add one count to this word
+    }
+    logTotal = 0; // a running total of our log(count of words)
+    foreach(terms as word -&gt; count) {
+        logTotal += log(count) + 1;
+    }
+    foreach(terms as word -&gt; count) {
+        // and again, once we got our total
+        weighting[word] = (log(count) + 1) / logTotal
+        // Add this to our global objects as defined above
+        terms[word][document.id] = weighting[word];
+    }
+}
+</code></pre><h3 id="calculatingtheidf">Calculating the IDF</h3><p>After your document updates are done, you'll want to calculate the IDF for each term that was updated. Another way is simply calculating the IDF at run-time every time you run a search, but this can result in a small performance sacrifice. </p><pre><code>update(term) { 
+    // Referencing the global objects defined above. ~.count is simply the number of keys in a hashmap, e.g. Javascript's Object.keys().length
+    terms[term].idf = log( ( ( documents.count - terms[term].documents.count) / terms[term].documents.count ) + 1 )
+}
+</code></pre><p>`</p><h3 id="thefindalgorithm">The find algorithm</h3><p>Next, is the algorithm to find and rank terms. We simply tokenise the search input, and run through each term. After that, we calculate the <em>inverse document frequency</em>. This is the number of documents in the collection, subtracted by the number of documents containing the term, divided by the number of documents containing the term. Whew. I add a 1.01 to this number. Why? The +1 is to prevent a -Infinity for log 0, and the 0.01 extra is just to give a <em>little</em> weighting to terms that appear in all documents. Generally a +1 is simply added.</p><p>After that, I also log if there is a partial match for more than 1 of the search terms. Since we stored which terms came after each term in the document, we can easily check if the next word in our search term matches against any of those. If so, then we add to our partial match coefficient. Finally, when all of the weights are added together, we multiply the weights added together with a simply <code>1 + log(p + 1)</code> where p is our partial coefficient, or rather how many terms we found that match the same order as the search query.</p><p>Pseudo-code for this may look like this:</p><pre><code>find(text) {
     words = tokenise(text)
     foreach(words as word) {
         foreach(terms[word].documents as document_id -&gt; document_weight) {
