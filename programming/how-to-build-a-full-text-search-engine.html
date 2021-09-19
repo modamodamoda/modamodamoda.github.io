@@ -59,9 +59,10 @@
 }
 </code></pre><h3 id="thefindalgorithm">The find algorithm</h3><p>Next, is the algorithm to find and rank terms. We simply tokenise the search input, and run through each term, comparing against our trusty <code>terms</code> hashmap. We then multiply the TF weighting for a term with our IDF score. In order to show a total score for a given document in a search query, we can simply add the weighting of all terms in a document together. There are many techniques for this. You could multiply them together, do some stuff with log, or anything inbetween. There's no correct answer and everyone will want to tweak this differently. In my gist example given at the beginning of the document, I actually store the words after a term in question in the documents table, so that we can enhance the weighting further - but that's getting ahead of ourselves in this article. Check the gist for more details. </p><p>Pseudo-code for this may look like this:</p><pre><code>find(text) {
     words = tokenise(text)
+    results = {}; // Our hashmap of results, we can process this into a sorted array, etc later.
     foreach(words as word) {
         foreach(terms[word].documents as document_id -&gt; document_weight) {
-            results[document] += terms[word].idf * document_weight // set the score for this document and store in the results
+            results[document_id] = (results[document_id] || 0) + terms[word].idf * document_weight // set the score for this document and store in the results
         }
     } 
 }
