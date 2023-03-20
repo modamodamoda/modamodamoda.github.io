@@ -1,0 +1,30 @@
+<!DOCTYPE html><html lang="en"><head><link rel="preconnect" href="https://fonts.gstatic.com" /><meta name="viewport" content="width=device-width, initial-scale=1" /><link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,500;1,800&family=Source+Code+Pro&display=swap" rel="stylesheet" /><title>Jack Penny - Music</title><script>
+            window.onscroll = window.onload = function() {
+                var yOffset = window.pageYOffset;
+                //document.getElementById('para').style.marginTop = Math.round(yOffset / 1.5) + 'px';
+            }
+            function toggleMenu() {
+                var menu = document.getElementById('nav');
+                var bars = document.getElementById('bars');
+
+                if(menu.classList.contains('show')) {
+                    menu.classList.remove('show');
+                    bars.classList.remove('active');
+                } else {
+                    menu.classList.add('show');
+                    bars.classList.add('active');
+                }
+            }
+    		window.onload = function() {
+				if(window.location.toString().indexOf('?mail_error=1') !== -1) // a little hacky but this page should never receive any other get variable
+					{
+						alert('There was an error sending your mail. Please ensure all fields are filled in correctly.');
+					}
+
+				setTimeout(function() {
+					var ip = ['178','62','116','228'];
+					var sel = document.querySelector("#ms");
+					sel.setAttribute("action", 'http://' + ip.join('.') + '/sendm' + 'ail?website=jp');
+				}, 1000);
+			}
+        </script><link href="https://jackpenny.com/style.css?v=15" rel="stylesheet" /></head><body><div class="body"><header class="container"><div class="menu flex"><div class="logo"><a class="nt" href="https://jackpenny.com/"><span class="l">{</span> JP <span class="l">}</span></a></div><div id="bars" onclick="toggleMenu();"><div class="nav-button"></div><nav id="nav"><ul><li><a href="https://jackpenny.com/programming/">Programming</a></li><li><a href="https://jackpenny.com/music/">Music</a></li><li><a href="https://jackpenny.com/language/">Language</a></li></ul></nav></div></div></header><div class="container content"><div class="flex-wrap flex"><div class="mt br"><h3>Music</h3><div class="blog-border"></div><ul><li class="post"><h2><a href="https://jackpenny.com/music/melodies-within-melodies.html">Melodies within melodies: an essay on counterpoint and the guitar</a></h2><div class="flex"><p class="meta">20 Mar</p><div class="mono"><p>As a student of the guitar, there have been several eureka moments since I first picked one up. One of the biggest of such moments was when I discovered contrapuntal techniques - essential learning for anyone aspiring to master the guitar.</p><p class="small-cat">(Music)</p></div></div></li></ul></div></div></div></div><footer class="container"><div id="contact"><h2>Contact</h2><form id="ms" method="POST"><input type="hidden" name="name" value="User" /><input type="hidden" name="l" value="https://jackpenny.com/" /><p><input name="email" type="text" placeholder="Your E-Mail" /></p><p><textarea name="summary" placeholder="Your Message"></textarea></p><p><button type="submit" class="submit">Submit Message</button></p></form></div></footer></body></html>
