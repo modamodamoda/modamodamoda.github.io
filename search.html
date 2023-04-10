@@ -31,9 +31,9 @@
 function fu(
 ) {
 
-            let __html = ["\n<div class='container content'>\n    <div class='flex-wrap flex'>\n        <div class='mt br w-100'>\n            <h3>Search</h3>\n            <div class='blog-border'></div>\n            <div class='search-form'>\n              <form onsubmit=\"location.hash=document.getElementById('_search').value; return false\">\n                <input type=\"text\" id=\"_search\" value=\"","\" />\n                <button type=\"submit\" class=\"submit\">Test</button>\n              </form>\n            </div>\n            <ul>\n            ","\n              <li><h2>No results.</h2></li>\n            ","\n            ","\n              <li><h2>Please enter a search.</h2></li>\n            ","\n            ","\n                <li class='post'>\n                    <h2><a href='","'>","</a></h2>\n                    <div class='flex'><div class='meta flex-shrink'>","</div>\n                    <div class='mono flex-grow'>\n                       ","\n                       <p class='small-cat'>(",")</p>\n                    </div>\n                    </div>\n                </li>\n            ","\n            </ul>\n        </div>\n    </div>\n</div>\n"];
+            let __html = ["\n<div class='container content'>\n    <div class='flex-wrap flex'>\n        <div class='mt br w-100'>\n            <h3>Search</h3>\n            <div class='blog-border'></div>\n            <div class='search-form'>\n              <form onsubmit=\"location.hash=document.getElementById('_search').value; return false\">\n                <input type=\"text\" id=\"_search\" value=\"","\" placeholder=\"Enter search...\" />\n                <button type=\"submit\" class=\"submit\">Search</button>\n              </form>\n            </div>\n            <ul>\n            ","\n              <li><h2>No results.</h2></li>\n            ","\n            ","\n              <li><h2>Please enter a search.</h2></li>\n            ","\n            ","\n                <li class='post'>\n                    <h2><a href='","'>","</a></h2>\n                    <div class='flex'><div class='meta flex-shrink'>","</div>\n                    <div class='mono flex-grow'>\n                       ","\n                       <p class='small-cat'>(",")</p>\n                    </div>\n                    </div>\n                </li>\n            ","\n            </ul>\n        </div>\n    </div>\n</div>\n"];
             this.html = __html;
-            let block_67992566 = () => {let ret = ''
+            let block_60982109 = () => {let ret = ''
 
 ret += this.__html(6)
 ret += this.__entities(this.__ev(["this","href"]))
@@ -60,7 +60,7 @@ if(this.__ev(["results","length"])==0&&this.__ev(["hash"])==''){
 ret += this.__html(4)
 }
 ret += this.__html(5)
-ret += this.__each(this.__ev(["results"]), "this", block_67992566, null)
+ret += this.__each(this.__ev(["results"]), "this", block_60982109, null)
 ret += this.__html(12)
 
 return ret
