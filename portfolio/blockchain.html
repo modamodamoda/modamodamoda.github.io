@@ -1,4 +1,5 @@
 <!DOCTYPE html><html lang="en"><head><link rel="preconnect" href="https://fonts.gstatic.com" /><meta name="viewport" content="width=device-width, initial-scale=1" /><link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,500;1,800&family=Source+Code+Pro&display=swap" rel="stylesheet" /><title>Jack Penny - Blockchain implemented in C</title><script>
+            window._version = "28800";
             window.onscroll = window.onload = function() {
                 var yOffset = window.pageYOffset;
                 //document.getElementById('para').style.marginTop = Math.round(yOffset / 1.5) + 'px';
@@ -15,6 +16,27 @@
                     bars.classList.add('active');
                 }
             }
+
+        function sendMail() {
+          var j = { email: document.getElementById('email').value, summary: document.getElementById('summary').value };
+          document.getElementById('contact').innerHTML = '<h3>Sending request...</h3>';
+          fetch('https://twilight-pine-5dfb.twilight-snowflake-f144.workers.dev/', {
+            method: "POST",
+            mode: "cors",
+            body: JSON.stringify(j),
+            headers: {
+              'content-type': 'application/json'
+            }
+          }).then(c => {
+            c.json().then(d => {
+              if(d.status == 202 || d.status == 200) document.getElementById('contact').innerHTML = '<h3>Sent succesfully</h3>';
+              else alert("Problem sending email");
+            }).catch(e => {
+              alert("Problem sending email.");
+            });
+          });
+          return false;
+        }
     		window.onload = function() {
 				if(window.location.toString().indexOf('?mail_error=1') !== -1) // a little hacky but this page should never receive any other get variable
 					{
@@ -27,4 +49,4 @@
 					sel.setAttribute("action", 'http://' + ip.join('.') + '/sendm' + 'ail?website=jp');
 				}, 1000);
 			}
-        </script><link href="https://jackpenny.com/style.css?v=255" rel="stylesheet" /></head><body><div class="body"><header class="container"><div class="menu flex"><div class="logo"><a class="nt" href="https://jackpenny.com/"><span class="l">{</span> JP <span class="l">}</span></a></div><div id="bars" onclick="toggleMenu();"><div class="nav-button"></div><nav id="nav"><ul><li><a href="https://jackpenny.com/programming/">Programming</a></li><li><a href="https://jackpenny.com/music/">Music</a></li><li><a href="https://jackpenny.com/language/">Language</a></li><li><a href="https://jackpenny.com/search.html">Search</a></li></ul></nav></div></div></header><p>asdsa</p></div><footer class="container"><div id="contact"><h2>Contact</h2><form id="ms" method="POST"><input type="hidden" name="name" value="User" /><input type="hidden" name="l" value="https://jackpenny.com/" /><p><input name="email" type="text" placeholder="Your E-Mail" /></p><p><textarea name="summary" placeholder="Your Message"></textarea></p><p><button type="submit" class="submit">Submit Message</button></p></form></div></footer></body></html>
+        </script><link href="https://jackpenny.com/style.css?v=255" rel="stylesheet" /></head><body><div class="body"><header class="container"><div class="menu flex"><div class="logo"><a class="nt" href="https://jackpenny.com/"><span class="l">{</span> JP <span class="l">}</span></a></div><div id="bars" onclick="toggleMenu();"><div class="nav-button"></div><nav id="nav"><ul><li><a href="https://jackpenny.com/programming/">Programming</a></li><li><a href="https://jackpenny.com/music/">Music</a></li><li><a href="https://jackpenny.com/language/">Language</a></li><li><a href="https://jackpenny.com/search.html">Search</a></li></ul></nav></div></div></header><p>asdsa</p></div><footer class="container"><div id="contact"><h2>Contact</h2><form id="ms" onsubmit="return sendMail()"><input type="hidden" name="name" value="User" /><input type="hidden" name="l" value="https://jackpenny.com/" /><p><input id="email" name="email" type="text" placeholder="Your E-Mail" /></p><p><textarea id="summary" name="summary" placeholder="Your Message"></textarea></p><p><button type="submit" class="submit">Submit Message</button></p></form></div></footer></body></html>
