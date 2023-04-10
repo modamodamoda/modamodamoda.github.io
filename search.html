@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><link rel="preconnect" href="https://fonts.gstatic.com" /><meta name="viewport" content="width=device-width, initial-scale=1" /><link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,500;1,800&family=Source+Code+Pro&display=swap" rel="stylesheet" /><title>Jack Penny - Search</title><script>
+<!DOCTYPE html><html lang="en"><head><link rel="preconnect" href="https://fonts.gstatic.com" /><meta name="viewport" content="width=device-width, initial-scale=1" /><link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,500;1,800&family=Source+Code+Pro&display=swap" rel="stylesheet" /><title>Jack Penny - Test</title><script>
             window.onscroll = window.onload = function() {
                 var yOffset = window.pageYOffset;
                 //document.getElementById('para').style.marginTop = Math.round(yOffset / 1.5) + 'px';
@@ -27,60 +27,283 @@
 					sel.setAttribute("action", 'http://' + ip.join('.') + '/sendm' + 'ail?website=jp');
 				}, 1000);
 			}
-        </script><link href="https://jackpenny.com/style.css?v=250" rel="stylesheet" /></head><body><div class="body"><header class="container"><div class="menu flex"><div class="logo"><a class="nt" href="https://jackpenny.com/"><span class="l">{</span> JP <span class="l">}</span></a></div><div id="bars" onclick="toggleMenu();"><div class="nav-button"></div><nav id="nav"><ul><li><a href="https://jackpenny.com/programming/">Programming</a></li><li><a href="https://jackpenny.com/music/">Music</a></li><li><a href="https://jackpenny.com/language/">Language</a></li></ul></nav></div></div></header><script>
-    function ajax() {
-		if (window.XMLHttpRequest) {
-			return new XMLHttpRequest();
-		} else if (window.ActiveXObject) {
-			return new ActiveXObject("Microsoft.XMLHTTP");
-		} else {
-			alert("Browser does not support XMLHTTP.");
-			return false;
-		}
-    }
-    var to;
-    function _search(query) {
-        to && clearTimeout(to);
-        to = setTimeout(function() { search(query) }, 700);
-    }
-    function search(query) {
+        </script><link href="https://jackpenny.com/style.css?v=255" rel="stylesheet" /></head><body><div class="body"><header class="container"><div class="menu flex"><div class="logo"><a class="nt" href="https://jackpenny.com/"><span class="l">{</span> JP <span class="l">}</span></a></div><div id="bars" onclick="toggleMenu();"><div class="nav-button"></div><nav id="nav"><ul><li><a href="https://jackpenny.com/programming/">Programming</a></li><li><a href="https://jackpenny.com/music/">Music</a></li><li><a href="https://jackpenny.com/language/">Language</a></li><li><a href="https://jackpenny.com/search.html">Search</a></li></ul></nav></div></div></header><div id="app"></div><script>(function(){var _this = {vars: {}, blk: {}, part: {}};
+function fu(
+) {
 
-        var req = ajax();
-        if(query.trim() == '') return;
+            let __html = ["\n<div class='container content'>\n    <div class='flex-wrap flex'>\n        <div class='mt br w-100'>\n            <h3>Search</h3>\n            <div class='blog-border'></div>\n            <div class='search-form'>\n              <form onsubmit=\"location.hash=document.getElementById('_search').value; return false\">\n                <input type=\"text\" id=\"_search\" value=\"","\" />\n                <button type=\"submit\" class=\"submit\">Test</button>\n              </form>\n            </div>\n            <ul>\n            ","\n              <li><h2>No results.</h2></li>\n            ","\n            ","\n              <li><h2>Please enter a search.</h2></li>\n            ","\n            ","\n                <li class='post'>\n                    <h2><a href='","'>","</a></h2>\n                    <div class='flex'><div class='meta flex-shrink'>","</div>\n                    <div class='mono flex-grow'>\n                       ","\n                       <p class='small-cat'>(",")</p>\n                    </div>\n                    </div>\n                </li>\n            ","\n            </ul>\n        </div>\n    </div>\n</div>\n"];
+            this.html = __html;
+            let block_67992566 = () => {let ret = ''
 
-        var el = document.getElementById('results'); 
-        el.innerHTML = '<p>Loading...</p>';
-        var url = 'https://jackmush.com/search?q=' + encodeURIComponent(query);
-        req.open("GET", url, true);
-        req.send(null);
-        req.onreadystatechange = function() {
-            if(req.readyState == 4 && req.status == 200) {
-                var res = JSON.parse(req.responseText);
-                el.innerHTML = '';
-                var j = res.results;
-                if(j.length == 0) {
-                    el.innerHTML = '<p>No results.</p>';
-                    return;
+ret += this.__html(6)
+ret += this.__entities(this.__ev(["this","href"]))
+ret += this.__html(7)
+ret += this.__entities(this.__ev(["this","title"]))
+ret += this.__html(8)
+ret += this.__entities(this.__ev(["this","date"]))
+ret += this.__html(9)
+ret += this.__entities(this.__ev(["this","summary"]))
+ret += this.__html(10)
+ret += this.__entities(this.__ev(["this","category"]))
+ret += this.__html(11)
+
+return ret}
+let ret=''
+ret += this.__html(0)
+ret += this.__entities(this.__ev(["hash"]))
+ret += this.__html(1)
+if(this.__ev(["results","length"])==0&&this.__ev(["hash"])!=''){
+ret += this.__html(2)
+}
+ret += this.__html(3)
+if(this.__ev(["results","length"])==0&&this.__ev(["hash"])==''){
+ret += this.__html(4)
+}
+ret += this.__html(5)
+ret += this.__each(this.__ev(["results"]), "this", block_67992566, null)
+ret += this.__html(12)
+
+return ret
+};
+var _render = function(args) { // return a JS function which contains the transpiled code
+            let localVars = { html: [], __vars: Object.assign({}, args) };
+            let scope = []; // block expression locally scoped vars
+            let getScope = (depth = 0) => {
+                if(scope.length > 0) {
+                    if(scope.length - depth < 0) throw "Scope non-existent";
+                    return scope.length - depth == 0 ? localVars.__vars : scope[scope.length - depth - 1];
                 }
-                for(var i = 0; i < j.length; i++) {
-                    var post = document.createElement('div');
-                    post.classList.add('post');
-                    var meta = document.createElement('p');
-                    meta.classList.add('meta');
-                    meta.innerText = j[i][1].date + ' / ' + j[i][1].category;
-                    post.appendChild(meta);
-                    var title = document.createElement('h2');
-                    var link = document.createElement('a');
-                    link.setAttribute('href', 'https://jackpenny.com' + j[i][1].href);
-                    link.innerText = j[i][1].title;
-                    title.appendChild(link);
-                    post.appendChild(title);
-                    var p = document.createElement('p');
-                    p.innerHTML = j[i][1].summary;
-                    post.appendChild(p);
-                    el.appendChild(post); 
+                else return localVars.__vars;
+            }
+            localVars.__ev = (i, ...as) => { // resolve/eval using hashtable
+                // todo: cache already-resolved ptrs into a hashtable, the issue is automatically removing scoped ones
+                let scopeDepth = 0, g = 0;
+                if(i[0] == '..') { // a scoped variable
+                    while(i[g] == '..') {
+                        scopeDepth++;
+                        g++;
+                    }
+                }
+                let curScope = getScope(scopeDepth); 
+                if(curScope[i[g]] === undefined) curScope = _this.vars; // globals are always available
+                let ptr = curScope;
+                if(i.length > 1)  { // only validate object properties (otherwise empty variables just return 'undefined')
+                    for(g = g; g < i.length; g++) {
+                        if(Array.isArray(i[g])) {
+                            // nested value - get the correct value
+                            i[g] = localVars.__ev(i[g]);
+                        }
+                        if(g < i.length - 1 && ptr[i[g]] === undefined) {
+                            // woops
+                            throw 'Variable undefined! ' + i.join(',');
+                        }
+                        if(typeof ptr[i[g]] === 'function') {
+                            if(g < i.length - 1) {
+                                // only terminal functions are allowed, not obj.fn().obj, for simplicity's sake
+                                // this could change in future but we don't want templating code looking messy
+                                throw 'Functions only allowed at end of objects ' + i.join('.');
+                            }
+                            ptr = ptr[i[g]].bind(ptr); // make sure object property functions are binded properly
+                                                                // (not sure the performance of this - could be shit, might want to use lambda instead)
+                        } else 
+                            ptr = ptr[i[g]];
+                    }
+                } else {
+                    ptr = curScope[i];
+                    if(typeof ptr === 'function') ptr = ptr.bind(curScope);
+                }
+                if(ptr !== undefined && typeof ptr === 'function') return ptr(...as);
+                else {
+                    if(as.length > 0) throw 'Variable ' + i + ' is not a function.';
+                    return ptr || '';
                 }
             }
-        } 
+            localVars.__print = (str) => {
+                buf += typeof str == 'string' ? str.replace(/</g, '&lt;').replace(/>/g, '&gt;') : str;
+            }
+            localVars.__printRaw = (str) => {
+                buf += str;
+            } 
+            localVars.__entities = (str) => { // todo: add unicode support
+                if(typeof str !== 'string') return str;
+                else return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+            }
+            localVars.__html = (n) => {
+                return localVars.html[n];
+            }
+            localVars.__each = (v, a, f, k) => {
+                let old = null;
+                let curScope = getScope();
+                if(curScope[a] !== undefined) old = curScope[a];
+                let ret = '';
+                if(typeof v === 'object') {
+                    // for ... in
+                    for(let key in v) {
+                        curScope[a] = v[key];
+                        if(k) curScope[k] = key;
+                        ret += f();
+                    }
+                } else {
+                    v.forEach((el) => {
+                        curScope[a] = el;
+                        ret += f();
+                    });
+                }
+                if(old !== null) curScope[a] = old;
+                else delete curScope[a];
+                return ret;
+            }
+            localVars.__with = (v, f) => {
+                scope.push(v);
+                let ret = f();
+                scope.pop();
+                return ret;
+            }
+            localVars.__blocks = _this.blk;
+            localVars.__runBlock = (n, a, f) => {
+                let ret = '';
+                ret += localVars.__blocks[n]((obj) => {
+                    let ret = '';
+                    if(obj === undefined) ret += f();
+                    else {
+                        scope.push(obj);
+                        ret += f();
+                        scope.pop();
+                    }
+                    return ret;
+                 }, getScope(), ...a);
+                return ret;
+            }
+            localVars.__runPart = (n, a) => {
+                // run a partial
+                let curScope = getScope();
+                let partial;
+                let local = true;
+                let ret = '';
+                if(!curScope.__partials || !curScope.__partials[n]) {
+                    partial = _this.part[n];
+                    local = false;
+                    if(!partial) throw 'Partial doesn\'t exist! ' + n;
+                }
+                else partial = curScope.__partials[n];
+                if(typeof a === 'function') {
+                    // block partial, this passes other partials to a partial
+                    scope.push({});
+                    a(); // this function likely registers some partials
+                    if(local) ret = partial();
+                    else ret = partial(getScope()); // run the partial in context
+                    scope.pop(); // clean off the scope
+                } else {
+                    scope.push(a);
+                    if(local) ret = partial();
+                    else ret = partial(a);
+                    scope.pop();
+                }
+                return ret;
+            }
+            localVars.__createPart = (n, f) => {
+                let curScope = getScope();
+                if(!curScope.__partials) curScope.__partials = {};
+                curScope.__partials[n] = f;
+            }
+
+            let buf = fu.call(localVars);
+
+            return buf.replace(/\n\s+\n/g,'\n');
+        };
+              function render(args) {
+                document.getElementById("app").innerHTML = _render(args);
+              }
+              /* Basic British -> American */
+var b2a = function(s) {
+  return s.replace(/is([ea])/,'iz$1').replace(/^(.+)our/,'$1or');
+}
+
+/* Porter stemmer for American spelling */
+var stemmer=function(){function h(){}function i(){console.log(Array.prototype.slice.call(arguments).join(" "))}var j={ational:"ate",tional:"tion",enci:"ence",anci:"ance",izer:"ize",bli:"ble",alli:"al",entli:"ent",eli:"e",ousli:"ous",ization:"ize",ation:"ate",ator:"ate",alism:"al",iveness:"ive",fulness:"ful",ousness:"ous",aliti:"al",iviti:"ive",biliti:"ble",logi:"log"},k={icate:"ic",ative:"",alize:"al",iciti:"ic",ical:"ic",ful:"",ness:""};return function(a,l){var d,b,g,c,f,e;e=l?i:h;if(3>a.length)return a;
+g=a.substr(0,1);"y"==g&&(a=g.toUpperCase()+a.substr(1));c=/^(.+?)(ss|i)es$/;b=/^(.+?)([^s])s$/;c.test(a)?(a=a.replace(c,"$1$2"),e("1a",c,a)):b.test(a)&&(a=a.replace(b,"$1$2"),e("1a",b,a));c=/^(.+?)eed$/;b=/^(.+?)(ed|ing)$/;c.test(a)?(b=c.exec(a),c=/^([^aeiou][^aeiouy]*)?[aeiouy][aeiou]*[^aeiou][^aeiouy]*/,c.test(b[1])&&(c=/.$/,a=a.replace(c,""),e("1b",c,a))):b.test(a)&&(b=b.exec(a),d=b[1],b=/^([^aeiou][^aeiouy]*)?[aeiouy]/,b.test(d)&&(a=d,e("1b",b,a),b=/(at|bl|iz)$/,f=/([^aeiouylsz])\1$/,d=/^[^aeiou][^aeiouy]*[aeiouy][^aeiouwxy]$/,
+b.test(a)?(a+="e",e("1b",b,a)):f.test(a)?(c=/.$/,a=a.replace(c,""),e("1b",f,a)):d.test(a)&&(a+="e",e("1b",d,a))));c=/^(.*[aeiouy].*)y$/;c.test(a)&&(b=c.exec(a),d=b[1],a=d+"i",e("1c",c,a));c=/^(.+?)(ational|tional|enci|anci|izer|bli|alli|entli|eli|ousli|ization|ation|ator|alism|iveness|fulness|ousness|aliti|iviti|biliti|logi)$/;c.test(a)&&(b=c.exec(a),d=b[1],b=b[2],c=/^([^aeiou][^aeiouy]*)?[aeiouy][aeiou]*[^aeiou][^aeiouy]*/,c.test(d)&&(a=d+j[b],e("2",c,a)));c=/^(.+?)(icate|ative|alize|iciti|ical|ful|ness)$/;
+c.test(a)&&(b=c.exec(a),d=b[1],b=b[2],c=/^([^aeiou][^aeiouy]*)?[aeiouy][aeiou]*[^aeiou][^aeiouy]*/,c.test(d)&&(a=d+k[b],e("3",c,a)));c=/^(.+?)(al|ance|ence|er|ic|able|ible|ant|ement|ment|ent|ou|ism|ate|iti|ous|ive|ize)$/;b=/^(.+?)(s|t)(ion)$/;c.test(a)?(b=c.exec(a),d=b[1],c=/^([^aeiou][^aeiouy]*)?[aeiouy][aeiou]*[^aeiou][^aeiouy]*[aeiouy][aeiou]*[^aeiou][^aeiouy]*/,c.test(d)&&(a=d,e("4",c,a))):b.test(a)&&(b=b.exec(a),d=b[1]+b[2],b=/^([^aeiou][^aeiouy]*)?[aeiouy][aeiou]*[^aeiou][^aeiouy]*[aeiouy][aeiou]*[^aeiou][^aeiouy]*/,
+b.test(d)&&(a=d,e("4",b,a)));c=/^(.+?)e$/;if(c.test(a)&&(b=c.exec(a),d=b[1],c=/^([^aeiou][^aeiouy]*)?[aeiouy][aeiou]*[^aeiou][^aeiouy]*[aeiouy][aeiou]*[^aeiou][^aeiouy]*/,b=/^([^aeiou][^aeiouy]*)?[aeiouy][aeiou]*[^aeiou][^aeiouy]*([aeiouy][aeiou]*)?$/,f=/^[^aeiou][^aeiouy]*[aeiouy][^aeiouwxy]$/,c.test(d)||b.test(d)&&!f.test(d)))a=d,e("5",c,b,f,a);c=/ll$/;b=/^([^aeiou][^aeiouy]*)?[aeiouy][aeiou]*[^aeiou][^aeiouy]*[aeiouy][aeiou]*[^aeiou][^aeiouy]*/;c.test(a)&&b.test(a)&&(c=/.$/,a=a.replace(c,""),e("5",
+c,b,a));"y"==g&&(a=g.toLowerCase()+a.substr(1));return a}}();
+
+/* stopwords list */
+const en_stopwords= ["a","about","above","after","again","am","an","and","any","are","as","at","be","because","been","before","being","below","between","both","but","by","can","did","do","does","doing","don","down","during","each","few","for","from","further","had","has","have","having","he","her","here","hers","herself","him","himself","his","how","i","im","if","in","into","is","it","its","itself","just","me","more","most","my","myself","no","nor","not","now","of","off","on","once","only","or","other","our","ours","ourselves","out","over","own","s","same","she","should","so","some","such","t","than","that","the","their","theirs","them","themselves","then","there","these","they","this","those","through","to","too","under","until","up","very","was","we","were","what","when","where","which","while","who","whom","why","will","with","you","your","yours","yourself","yourselves"]
+
+function Tokenise(str) {
+    const t = str.replace(/[\?.,\/#!$%\^&\*;:{}=\-_~()\t\n\r]/g," ").replace(/[^\sa-zA-Z]/g, '').replace(/\s\s+/g, ' ').trim().toLowerCase().split(' ');
+    return t.filter(c => !en_stopwords.includes(c)).map(c => stemmer(b2a(c)).substring(0,8));
+}
+
+let summaries = null;
+let process_queue = null;
+
+function sanitise_hash(hash) {
+  return decodeURIComponent(hash.substring(1))
+}
+
+window.addEventListener(
+  "load",
+  () => {
+    fetch('./documents_summary.json').then((d) => {
+      d.json().then(c => {
+        summaries = c;
+        console.log(summaries);
+        if(process_queue !== null) process_result();
+      });
+    });
+    render({ hash: sanitise_hash(location.hash), results: [] });
+    onHash();
+  });
+
+function process_result(result) {
+  console.log(result)
+  if(summaries === null) {
+    process_queue = result;
+    return;
+  }
+  if(!result) { 
+    result = process_queue;
+  }
+  var found = {};  
+  for(var r of result) {
+    if(r === null) continue;
+    for(var z = 0; z < r.length; z += 2) {
+      if(!found[r[z]]) found[r[z]] = r[z + 1] + 1;
+      else found[r[z]]+= r[z + 1] + 1;
     }
-</script><div class="container"><input type="text" placeholder="Enter search here..." class="searchbar" onkeyup="_search(this.value)" /></div><div class="content container" id="results"></div></div><footer class="container"><div id="contact"><h2>Contact</h2><form id="ms" method="POST"><input type="hidden" name="name" value="User" /><input type="hidden" name="l" value="https://jackpenny.com/" /><p><input name="email" type="text" placeholder="Your E-Mail" /></p><p><textarea name="summary" placeholder="Your Message"></textarea></p><p><button type="submit" class="submit">Submit Message</button></p></form></div></footer></body></html>
+  }
+  var results = [];
+  for(var c in found) {
+    results.push([c, summaries[c]]);
+  }
+  results.sort((a, b) => b[0] - a[0]);
+  render({ hash: sanitise_hash(location.hash), results: results.map(a => a[1]) });
+}
+
+function onHash() {
+    var tokens = Tokenise(location.hash);
+    console.log('tst')
+    const promises = [];
+    for(let token of tokens) {
+      promises.push(new Promise((resolve, reject) => {
+        fetch('./dump/' + token + '.json').then(async (d) => {
+          d.json().then(c => {
+            resolve(c);
+          }).catch(() => resolve(null));
+        }).catch(() => resolve(null));
+      }));
+    }
+    Promise.all(promises).then(values => {
+      process_result(values)
+    });
+}
+
+window.addEventListener(
+  "hashchange",
+  () => {
+    onHash();
+  },
+  false
+);
+})();</script></div><footer class="container"><div id="contact"><h2>Contact</h2><form id="ms" method="POST"><input type="hidden" name="name" value="User" /><input type="hidden" name="l" value="https://jackpenny.com/" /><p><input name="email" type="text" placeholder="Your E-Mail" /></p><p><textarea name="summary" placeholder="Your Message"></textarea></p><p><button type="submit" class="submit">Submit Message</button></p></form></div></footer></body></html>
